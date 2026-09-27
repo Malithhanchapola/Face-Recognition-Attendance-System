@@ -1,71 +1,131 @@
-# AttendRx: Smart Face Recognition-Based Attendance System
-
-<div>
-  <img src="https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/assets/61963755/aa1523e2-6486-4004-ac36-441afc5dc426" alt="Image 1" width="400" height="auto"/>
-  <img src="https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/assets/61963755/af3a6a49-e795-42bc-b403-711398fd050b" alt="Image 2" width="400" height="auto"/>
-</div>
+# AttendRx – Smart Face Recognition Attendance System
 
 ## Overview
 
-AttendRx is an innovative solution designed to modernize and simplify attendance management in educational institutions. Traditional methods of recording attendance are often time-consuming and prone to errors. This project introduces a smart, automated system utilizing face recognition technology to seamlessly track student attendance.
+AttendRx is a smart attendance management system that uses **ESP32-CAM, Wi-Fi communication, and face recognition** to automate the process of recording student attendance. The system captures student images through an ESP32-CAM and processes them using a Python-based face recognition system to identify students and record attendance with timestamps.
 
-### Key Features
+The project provides a practical combination of **IoT, computer vision, and Python** to reduce the effort required for traditional attendance management.
 
-- **Efficient Attendance Tracking:** Automates the attendance process by leveraging ESP32-CAM modules and face recognition.
-- **Real-time Feedback:** Provides live updates on the number of students present in the classroom.
-- **User-friendly Interface:** Easy integration into educational settings with minimal setup required.
+## Features
 
-## Code Integration - ESP32-CAM and Face Recognition
+* **Automated Attendance Tracking:** Records attendance using face recognition.
+* **Face Recognition:** Identifies registered students from captured images.
+* **ESP32-CAM Integration:** Uses an ESP32-CAM for image capture.
+* **Wireless Communication:** Transfers captured images through Wi-Fi.
+* **Real-Time Processing:** Processes images and identifies students during attendance.
+* **Attendance Records:** Records recognized students along with timestamps.
+* **IoT Integration:** Combines embedded hardware with a Python-based recognition system.
+* **Simple Workflow:** Designed to reduce manual attendance work.
 
-The repository includes code segments that facilitate the interaction between the ESP32-CAM module and the face recognition system.
+## Technologies Used
 
-### ESP32-CAM Integration
+* **Hardware:** ESP32-CAM
+* **Programming:** Python, Arduino/C++
+* **Computer Vision:** Face Recognition
+* **Communication:** Wi-Fi
+* **Data Processing:** Python
+* **Development Tools:** Arduino IDE
+* **Version Control:** Git & GitHub
 
-The ESP32-CAM code, responsible for handling camera functionality and communication with the AttendRx system, is included within the repository under the `ESP32Cam_Code_AttendRx` folder.
+## System Requirements
 
-- **`AttendRx.ino`**: This file contains the code for the ESP32-CAM module. It manages the camera, establishes communication, and interacts with the AttendRx system.
+* ESP32-CAM module
+* Computer/Laptop
+* Wi-Fi network
+* Python 3.x
+* Arduino IDE
+* ESP32 board support for Arduino IDE
+* Webcam/camera access through ESP32-CAM
 
-### Face Recognition Script
+## Installation & Setup
 
-The `ESP32Cam.py` Python script, located in the `FaceRecognition_Code_AttendRx` folder, fetches data from the ESP32-CAM module, processes images, and performs face recognition tasks.
+### 1. Clone the Repository
 
-### How It Works
+```bash
+git clone <your-repository-url>
+cd <your-repository-folder>
+```
 
-0. **Video Preview**
+### 2. ESP32-CAM Setup
 
-   https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/assets/61963755/10132f15-a69a-4f67-bb51-405e13502336
+1. Open the `ESP32Cam_Code_AttendRx` folder.
+2. Open `AttendRx.ino` using Arduino IDE.
+3. Configure the ESP32-CAM board.
+4. Add your Wi-Fi network credentials.
+5. Connect the ESP32-CAM to your computer.
+6. Upload the program to the ESP32-CAM.
 
-2. **ESP32-CAM Integration (`AttendRx.ino`)**:
-   - The `AttendRx.ino` code initializes the ESP32-CAM module, establishes Wi-Fi connectivity, and sets up the camera.
-   - It communicates with the AttendRx system, allowing the system to interact with the ESP32-CAM module for capturing images.
+### 3. Python Environment
 
-3. **Face Recognition Script (`ESP32Cam.py`)**:
-   - The `ESP32Cam.py` Python script fetches data from the ESP32-CAM module by establishing a connection through Wi-Fi.
-   - It processes the captured images using face recognition algorithms to identify students' faces.
-   - The script interacts with the AttendRx system to manage attendance based on recognized faces.
+Navigate to the face recognition project:
 
- 4. **Block Diagram**
+```bash
+cd FaceRecognition_Code_AttendRx
+```
 
-    ![image](https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/assets/61963755/b668ed57-8b8b-4dff-a37b-1783d611961e)
+Install the required Python packages according to the dependencies used by the project.
 
-5. **Face Recognition**
+### 4. Run the Face Recognition System
 
-     ![image](https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/assets/61963755/df4a9869-4b47-4df6-9aeb-eb94e0f60401)
+Run the Python script:
 
-## Project Impact
+```bash
+python ESP32Cam.py
+```
 
-The integration of the ESP32-CAM module, `AttendRx.ino` code, and the Face Recognition Script into the AttendRx system represents a significant innovation in attendance tracking for educational institutions. It streamlines administrative tasks, enhances security, and contributes to a more efficient and engaging learning environment.
+The system will connect to the ESP32-CAM through Wi-Fi, retrieve captured images, process them, and perform face recognition.
 
-## Repository Details
+## Usage
 
-- **Repository Link:** [AttendRx Face Recognition Attendance System](https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System)
-- **Demonstration Video:** [AttendRx Video Demo](https://youtu.be/sz25xxF_AVE?si=RQfvERSrklVlNIQV)
-- **ESP32-CAM Code:** [ESP32-CAM Integration Code](https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/tree/main/ESP32Cam_Code_AttendRx)
-  - **AttendRx Code:** [AttendRx.ino](https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/blob/main/ESP32Cam_Code_AttendRx/AttendRx.ino)
-- **Face Recognition Script:** [Face Recognition Python Script](https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System/blob/main/FaceRecognition_Code_AttendRx/ESP32Cam.py)
+1. Start the ESP32-CAM.
+2. Connect the ESP32-CAM to the configured Wi-Fi network.
+3. Run the Python face recognition script.
+4. Capture student images using the ESP32-CAM.
+5. The Python application processes the received images.
+6. Recognized students are identified using face recognition.
+7. Attendance is recorded with the corresponding timestamp.
 
-### Contributors
+## Project Structure
 
-- **[@onkar69483](https://github.com/onkar69483)** - Onkar Mendhapurkar
-- **[@Praneetm1403](https://github.com/Praneetm1403)** - Praneet Mahendrakar
-- **[@prabhat4002](https://github.com/prabhat4002)** - Prabhat Shankar
+```text
+AttendRx/
+│
+├── ESP32Cam_Code_AttendRx/
+│   └── AttendRx.ino
+│
+├── FaceRecognition_Code_AttendRx/
+│   └── ESP32Cam.py
+│
+└── README.md
+```
+
+## Contributing
+
+Contributions are welcome. To contribute:
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Commit your changes.
+5. Push the branch to GitHub.
+6. Create a Pull Request.
+
+## License
+
+This project should retain the license and attribution of the original repository/code from which it was adapted. Check the original repository's license before redistributing or modifying the project.
+
+## Attribution
+
+This version is adapted and customized for personal learning and portfolio development from the original **AttendRx: Smart Face Recognition-Based Attendance System** project.
+
+Original repository:
+https://github.com/onkar69483/AttendRx-Face-Recognition-Attendance-System
+
+Original contributors include **Onkar Mendhapurkar, Praneet Mahendrakar, and Prabhat Shankar**.
+
+## Contact
+
+**Malith Hanchapola**
+
+* GitHub: https://github.com/
+* Email: Your Email Address
